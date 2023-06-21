@@ -5,7 +5,7 @@
   "require": {
     "php": ">=7.4",
     "magento/framework": "*",
-    "magento/module-theme": "104.0.*",
+    "magento/module-theme": "101.1.*",
     "m2-oh/module-core": "*"
   },
   "license": [
