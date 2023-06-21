@@ -5,7 +5,7 @@
   "require": {
     "php": ">=7.4",
     "magento/framework": "*",
-    "magento/module-catalog": "104.0.*",
+    "magento/module-theme": "104.0.*",
     "m2-oh/module-core": "*"
   },
   "license": [
@@ -16,7 +16,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "OH\\PreviewBtn\\": ""
+      "OH\\Popup\\": ""
     }
   }
 }
