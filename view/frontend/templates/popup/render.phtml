@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var $block \OH\Popup\Block\Popup
+ */
+$backgroundImage = $block->getBackgroundImage();
+?>
+<style>
+    <?=$block->getCssStyles();?>
+</style>
+<?php if ($block->isEnabled()): ?>
+    <div style="display: none" id="oh_popup">
+        <?= $block->getContent(); ?>
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "#oh_popup": {
+                "OH_Popup/js/view/popup": <?= $block->getJsonConfig(); ?>
+            }
+        }
+    </script>
+<?php endif; ?>

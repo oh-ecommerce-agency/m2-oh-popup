@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="OH_Popup::title"
+             title="Popup Newsletter"
+             parent="OH_Core::oh"
+             module="OH_Popup"
+             sortOrder="20"
+             translate="title"
+             resource="OH_Popup::settings"
+        />
+
+        <add id="OH_Popup::settings"
+             title="Settings"
+             module="OH_Popup"
+             sortOrder="10"
+             translate="title"
+             parent="OH_Popup::title"
+             action="adminhtml/system_config/edit/section/oh_popup/"
+             resource="OH_Popup::settings"
+        />
+    </menu>
+</config>

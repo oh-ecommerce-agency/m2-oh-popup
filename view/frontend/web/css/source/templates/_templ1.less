@@ -1,0 +1,90 @@
+& when (@media-common = true) {
+  #html-body {
+    .oh-popup.popup-template1 {
+      border-radius: 5px;
+
+      .modal-inner-wrap {
+        max-width: 700px;
+        overflow: hidden;
+        box-shadow: -1px 4px 26px -8px rgba(0, 0, 0, 0.52);
+
+        .modal-header {
+          button.action-close {
+            top: 5px;
+            line-height: normal;
+            &:before {
+              color: #ffffff;
+              line-height: normal;
+              vertical-align: middle;
+            }
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .template1 {
+        .pagebuilder-column-line {
+          flex-direction: column;
+          justify-content: center;
+
+          .pagebuilder-column {
+            width: 100%;
+
+            &:first-of-type {
+              text-align: center;
+              border-bottom: 1px solid #ececec;
+              padding: 40px 15px;
+              color: #fff;
+
+              [data-content-type="text"] {
+                font-size: 24px;
+                font-weight: bold;
+                max-width: 600px;
+                margin: 0 auto;
+              }
+            }
+
+            &:last-of-type {
+              padding: 20px;
+              align-items: center;
+
+              [data-content-type="html"] {
+                .newsletter-container {
+                  .block.newsletter {
+                    .content {
+                      .form {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .field.newsletter {
+                          max-width: 600px;
+                          width: 100%;
+                        }
+
+                        .actions {
+                          width: 100%;
+                          display: flex;
+                          justify-content: center;
+
+                          button {
+                            margin-left: 0;
+                            margin-top: 20px;
+                            border-radius: 60px;
+                            background-color: #111111;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

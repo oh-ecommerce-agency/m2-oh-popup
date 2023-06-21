@@ -1,0 +1,121 @@
+@import 'templates/_templ1.less';
+@import 'templates/_templ2.less';
+@import 'templates/_templ3.less';
+@import 'templates/_templ4.less';
+
+& when (@media-common = true) {
+  #html-body {
+    .oh-popup {
+      overflow: unset;
+      top: 100px;
+
+      .modal-inner-wrap {
+        overflow: unset;
+        border-radius: 25px;
+        margin-top: 0;
+
+        .modal-header {
+          padding: 0;
+
+          button.action-close {
+            z-index: 12;
+
+            &:before {
+              color: black;
+              overflow: unset;
+              font-weight: 700;
+            }
+          }
+        }
+
+        .modal-content {
+          padding: 0;
+        }
+      }
+
+      .template1,
+      .template2,
+      .template3,
+      .template4 {
+        .pagebuilder-column-line {
+          align-items: center;
+          position: relative;
+
+          figure[data-content-type="image"] {
+            img {
+              display: inherit;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+
+          p {
+            margin: 0;
+          }
+
+          .title {
+            margin-top: 5px;
+
+            p {
+              font-size: 22px;
+              font-weight: bold;
+            }
+          }
+
+          .text {
+            margin-top: 15px;
+
+            p {
+              font-size: 16px;
+            }
+          }
+
+          [data-content-type="html"] {
+            width: 100%;
+
+            .newsletter-container {
+              display: flex;
+              justify-content: center;
+
+              .block.newsletter {
+                margin: 0;
+                max-width: 100%;
+                width: 100%;
+
+                .actions,
+                .field.newsletter {
+                  float: none;
+                }
+
+                .field.newsletter {
+                  max-width: 100%;
+
+                  .control {
+                    &:before {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
+  #html-body {
+    .oh-popup {
+      left: 0;
+      transform: translateX(5.5%);
+      width: 90%;
+
+      .modal-inner-wrap {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

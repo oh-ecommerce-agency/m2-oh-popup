@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <section id="oh_popup" translate="label" sortOrder="100"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Popup</label>
+            <tab>oh_core</tab>
+            <resource>OH_Popup::settings</resource>
+            <group id="settings" translate="label"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="enabled" translate="label comment" type="select"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="delay" translate="label comment" type="text"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show after X Seconds</label>
+                    <comment>Popup will be open after seconds value (ie: 20 seconds == 20000)</comment>
+                </field>
+                <field id="block_id" translate="label comment" type="select"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Template</label>
+                    <comment>Choose the template to render (CMS Block)</comment>
+                    <source_model>OH\Popup\Model\Source\Block</source_model>
+                </field>
+                <field id="send_coupon" translate="label comment" type="select"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send coupon code</label>
+                    <comment>Send coupon code in email</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="coupon_rule" translate="label comment" type="select"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Coupon rule</label>
+                    <source_model>OH\Popup\Model\Source\Rule</source_model>
+                    <depends>
+                        <field id="send_coupon">1</field>
+                    </depends>
+                    <comment>Important! Make sure your selected rule allows automatic coupon generation</comment>
+                </field>
+                <field id="coupon_prefix" translate="label comment" type="text"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Coupon prefix</label>
+                    <depends>
+                        <field id="send_coupon">1</field>
+                    </depends>
+                </field>
+                <field id="coupon_suffix" translate="label comment" type="text"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Coupon suffix</label>
+                    <depends>
+                        <field id="send_coupon">1</field>
+                    </depends>
+                </field>
+                <field id="coupon_length" translate="label comment" type="text"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Coupon length</label>
+                    <depends>
+                        <field id="send_coupon">1</field>
+                    </depends>
+                </field>
+                <field id="email_template" translate="label" type="select" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Email template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="css_styles" translate="label" type="textarea" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Css styles</label>
+                    <comment>Add .oh-popup before your styles to be sure your custom styles no broke any other
+                        modal (Ex: .oh-popup .modal-inner-wrap)
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

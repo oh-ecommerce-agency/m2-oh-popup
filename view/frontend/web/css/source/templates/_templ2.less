@@ -1,0 +1,195 @@
+& when (@media-common = true) {
+  #html-body {
+    .oh-popup.popup-template2 {
+      .modal-inner-wrap {
+        box-shadow: 0 8px 0 -2px #cdcdcd;
+      }
+
+      .template2 {
+        .pagebuilder-column-line {
+          .pagebuilder-column {
+            &:first-of-type {
+              position: absolute;
+              top: -50px;
+
+              figure[data-content-type="image"] {
+                img {
+                  border-radius: 50%;
+                }
+              }
+            }
+
+            &:last-of-type {
+              padding: 20px;
+              width: 100%;;
+              align-items: end;
+
+              [data-content-type="html"] {
+                .newsletter-container {
+                  .block.newsletter {
+                    .content {
+                      .form {
+                        height: 100%;
+
+                        .field.newsletter {
+                          .control {
+                            input {
+                              margin: 0;
+                              min-width: 100%;
+
+                              &::placeholder {
+                                font-size: 16px;
+                              }
+                            }
+                          }
+                        }
+
+                        .actions {
+                          float: none;
+                          width: 100%;
+
+                          button {
+                            height: 45px;
+                            padding: 10px 30px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
+  #html-body {
+    .oh-popup.popup-template2 {
+      .template2 {
+        .pagebuilder-column-line {
+          .pagebuilder-column:first-of-type {
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            figure[data-content-type="image"] {
+              width: 115px;
+              height: 115px;
+            }
+          }
+
+          .pagebuilder-column:last-of-type {
+            margin-top: 60px;
+
+            .title,
+            .text {
+              width: 100%;
+            }
+
+            [data-content-type="html"] {
+              .newsletter-container {
+                margin-top: 15px;
+
+                .block.newsletter {
+                  .content {
+                    .form {
+                      display: flex;
+                      flex-direction: column;
+                      gap: 15px;
+
+                      .actions {
+                        button {
+                          width: 100%;
+                          border-radius: 60px;
+                        }
+                      }
+
+                      .field.newsletter {
+                        .control {
+                          input {
+                            border-radius: 60px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = (@screen__m + 1)) {
+  #html-body {
+    .oh-popup.popup-template2 {
+      .modal-inner-wrap {
+        max-width: 480px;
+      }
+
+      .template2 {
+        .pagebuilder-column-line {
+          .pagebuilder-column:first-of-type {
+            left: 40px;
+            width: fit-content;
+
+            figure[data-content-type="image"] {
+              width: 150px;
+              height: 150px;
+            }
+          }
+
+          .pagebuilder-column:last-of-type {
+
+            .title,
+            .text {
+              width: 55%;
+            }
+
+            [data-content-type="html"] {
+              .newsletter-container {
+                margin-top: 35px;
+
+                .block.newsletter {
+                  .content {
+                    .form {
+                      display: flex;
+                      flex-wrap: wrap;
+
+                      .actions {
+                        width: 30%;
+
+                        button {
+                          width: 100%;
+                          margin-left: 0;
+                        }
+                      }
+
+                      .field.newsletter {
+                        width: 70%;
+
+                        .control {
+                          input {
+                            border-radius: 60px 0 0 60px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

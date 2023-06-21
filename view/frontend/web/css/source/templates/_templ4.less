@@ -1,0 +1,151 @@
+& when (@media-common = true) {
+  #html-body {
+    .oh-popup.popup-template4 {
+      .modal-inner-wrap {
+        border-radius: 25px;
+      }
+
+      .template4 {
+        .pagebuilder-column-line {
+          padding: 20px;
+
+          .pagebuilder-column {
+            figure[data-content-type="image"] {
+              max-width: 280px;
+              height: 280px;
+              margin: 0 auto;
+              display: block;
+
+              img {
+                aspect-ratio: ~"1 / 1";
+              }
+            }
+
+            [data-content-type="html"] {
+              margin-top: 20px;
+              .newsletter-container {
+                .block.newsletter {
+                  .content {
+                    .form {
+                      display: flex;
+                      align-items: center;
+                      height: 100%;
+                      position: relative;
+
+                      .field.newsletter {
+                        margin: 0 auto;
+
+                        .control {
+                          input {
+                            margin: 0;
+                            min-width: 100%;
+                            border-radius: 60px;
+
+                            &::placeholder {
+                              font-size: 16px;
+                            }
+                          }
+                        }
+                      }
+
+                      .actions {
+                        position: absolute;
+                        width: 70px;
+                        right: 0;
+                        top: 0;
+
+                        button {
+                          display: block;
+                          border-radius: 60px;
+                          height: 45px;
+                          padding: 10px 30px;
+                          width: 100%;
+                          margin-left: 0;
+
+                          &:before {
+                            position: absolute;
+                            content: '';
+                            background: url('@{baseDir}OH_Popup/images/send.svg') no-repeat center / 30px;;
+                            width: 30px;
+                            height: 30px;
+                            left: 0;
+                            top: 0;
+                            transform: translate(60%, 25%);
+                          }
+
+                          span {
+                            display: none;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
+  #html-body {
+    .oh-popup.popup-template4 {
+      .template4 {
+        .pagebuilder-column-line {
+          [data-content-type="html"] {
+            .newsletter-container {
+              .block.newsletter {
+                .content {
+                  .form {
+                    .field.newsletter {
+                      width: 100%;
+                    }
+
+                    .actions {
+                      transform: translate(2%, 0%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = (@screen__m + 1)) {
+  #html-body {
+    .oh-popup.popup-template4 {
+      .modal-inner-wrap {
+        max-width: 500px;
+      }
+
+      .template4 {
+        .pagebuilder-column-line {
+          [data-content-type="html"] {
+            .newsletter-container {
+              .block.newsletter {
+                .content {
+                  .form {
+                    .field.newsletter {
+                      width: 70%;
+                    }
+
+                    .actions {
+                      transform: translate(-85%, 0%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
